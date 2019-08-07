@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+  name: spring-jpa
+  profiles:
+    active: local
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    username: user
+    password: pass
+    url: jdbc:mysql://localhost:3306/teste
+    hikari:
+      min-idle: 1
+      maximum-pool-size: 1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: validate
